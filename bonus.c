@@ -6,7 +6,7 @@
 /*   By: rtakashi <rtakashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:13:18 by rtakashi          #+#    #+#             */
-/*   Updated: 2023/06/20 19:50:19 by rtakashi         ###   ########.fr       */
+/*   Updated: 2023/06/15 14:14:56 by rtakashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,6 @@ static void	loop_pipe_fork(t_args args, char **e_path)
 	{
 		if (pipe(p) < 0)
 			free_perror_exit("pipe", e_path, NULL);
-		// printf("p[0]:%d\n",p[0]);
-		// printf("p[1]:%d\n",p[1]);
 		pid = fork();
 		if (pid < 0)
 			free_perror_exit("fork", e_path, NULL);

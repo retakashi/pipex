@@ -6,7 +6,7 @@
 /*   By: rtakashi <rtakashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 22:22:59 by reira             #+#    #+#             */
-/*   Updated: 2023/06/15 23:23:28 by rtakashi         ###   ########.fr       */
+/*   Updated: 2023/06/09 15:54:46 by rtakashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	get_fd(t_args *args, int flg, char **e_path)
 
 void	first_child(t_args args, int p[], char **e_path)
 {
-	get_fd(&args, 0, e_path);
+	iget_fd(&args, 0, e_path);
 	if (dup2(args.in_fd, STDIN_FILENO) < 0)
 		free_perror_exit("dup2", e_path, NULL);
 	if (close(args.in_fd) < 0)

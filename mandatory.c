@@ -6,7 +6,7 @@
 /*   By: rtakashi <rtakashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 15:14:18 by reira             #+#    #+#             */
-/*   Updated: 2023/06/20 17:39:13 by rtakashi         ###   ########.fr       */
+/*   Updated: 2023/06/15 14:11:36 by rtakashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,23 +54,11 @@ static void	do_pipe_fork(t_args args, char **e_path)
 
 // __attribute__((destructor)) static void destructor()
 // {
-// // system("leaks -q pipex");
-// 	for (int i = 3; i < 100; i++) {
-// 		if(close(i) == 0) {
-// 			printf("close %d\n", i);
-// 		}
-// 	}
+// system("leaks -q pipex");
 // }
-#include <stdio.h>
 
 int	main(int argc, char **argv, char **envp)
 {
-	// for (int i = 3; i < 100; i++) {
-	// 	if(close(i) == 0) {
-	// 		printf("close %d\n", i);
-	// 	}
-	// }
-	// printf("-----------------\n");
 	t_args	args;
 	char	**e_path;
 
