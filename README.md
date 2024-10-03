@@ -16,10 +16,10 @@ macOS
   make
   ./pipex infile cmd1 cmd2 outfile
   ```
-  examples: 
+  examples:
+  
     ./pipex infile "ls -l" "wc -l" outfile
-    
-    → pipex behaves like: < infile ls -l | wc -l > outfile
+    pipex behaves like: < infile ls -l | wc -l > outfile
 
 ### Bonus part
   ``` bash
