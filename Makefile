@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: rtakashi <rtakashi@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/14 18:49:43 by rtakashi          #+#    #+#              #
-#    Updated: 2023/06/15 14:48:23 by rtakashi         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME = pipex
 BONUS_NAME = pipex_bonus
 CC = cc
@@ -22,14 +10,12 @@ OBJS_DIR = objs
 OBJS = ${addprefix $(OBJS_DIR)/,$(SRCS:.c=.o)}
 BONUS_OBJS = ${addprefix $(OBJS_DIR)/,$(BONUS_SRCS:.c=.o)}
 
-# ifdef WITH_BONUS
-# 	$(OBJS) = $(BONUS_OBJS)
-# else
-# 	$(OBJS) = $(OBJS)
-# endif
+ifdef WITH_BONUS
+	$(OBJS) = $(BONUS_OBJS)
+else
+	$(OBJS) = $(OBJS)
+endif
 
-# AR = ar
-# ARFLAGS = rcs
 RM = rm -f
 
 .DEFAULT_GOAL :=$(NAME)
@@ -56,6 +42,6 @@ $(BONUS_NAME): $(BONUS_OBJS)
 	$(CC) $(CFLAGS) $(BONUS_OBJS) $(LIBFT) -o $(BONUS_NAME)
 	
 bonus: $(BONUS_NAME)
-# @make WITH_BONUS=1
+@make WITH_BONUS=1
 
 .PHONY: all clean fclean re bonus
