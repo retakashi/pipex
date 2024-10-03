@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rtakashi <rtakashi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: reira <reira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 22:14:08 by reira             #+#    #+#             */
-/*   Updated: 2023/06/12 20:46:29 by rtakashi         ###   ########.fr       */
+/*   Updated: 2024/10/03 17:48:24 by reira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,8 @@ void	free_perror_exit(char *str, char **free1, char **free2)
 
 void	free_put_error_exit(char **str, char **free)
 {
-	size_t	i;
-
 	if (free != NULL)
 		ft_free(free);
-	i = 0;
 	ft_putstr_fd(str[0], 2);
 	ft_putstr_fd(": command not found\n", 2);
 	if (str != NULL)
