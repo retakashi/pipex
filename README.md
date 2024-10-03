@@ -14,24 +14,19 @@ macOS
 ### Mandatory part
   ``` bash
   make
-  ./pipex infile cmd1 cmd2 outfile
+  ./pipex file1 cmd1 cmd2 file2
   ```
-  examples:
+  example:
   
     ./pipex infile "ls -l" "wc -l" outfile
-    pipex behaves like: < infile ls -l | wc -l > outfile
+    (pipex behaves like: < infile ls -l | wc -l > outfile)
 
 ### Bonus part
   ``` bash
-  .pipex_bonus
-## Features
+  make bonus
+  ./pipex_bonus here_doc LIMITER cmd1 cmd2 file1
+  ```
+  example:
 
-## Reference
-
-## Author
-
-[twitter](https://twitter.com/Kotabrog)
-
-## Licence
-
-[MIT](https://......)
+    ./pipex_bonus here_doc LIMITER "wc -l" cat outfile
+    (pipex behaves like: wc -l << LIMITER | cat >> file)
