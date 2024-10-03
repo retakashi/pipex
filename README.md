@@ -18,7 +18,9 @@ macOS
   ```
   examples: 
     ./pipex infile "ls -l" "wc -l" outfile
+    
     → pipex behaves like: < infile ls -l | wc -l > outfile
+
 ### Bonus part
   ``` bash
   .pipex_bonus
